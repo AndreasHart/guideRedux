@@ -1,4 +1,4 @@
-const visibilityFilter = (state = 'SHOW_ALL', action) => {
+const visibilityFilter = (state = {type: 'UPDATE_FILTER', input: '' }, action) => {
   switch (action.type) {
     case 'UPDATE_FILTER':
     debugger;

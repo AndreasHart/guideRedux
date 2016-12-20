@@ -6,20 +6,21 @@ const EventList = ({ events, onEventClick }) => (
   <ul>
 
     {console.log('somehting',events)}
-    {(events.events && events.events.events) ? Object.keys(events.events.events).map(key => {
-      let e = events.events.events[key];
+    { events ? events.map(e => {
+
       return(
       <Event
         key={e.id}
         event={e}
         onSingleEvent={onEventClick}
       />)
-    }) : ''}
+    }) :''
+  }
   </ul>
 
 )
 EventList.propTypes = {
-  events: PropTypes.object,
+  events: PropTypes.array,
   onEventClick: PropTypes.func.isRequired
 }
 

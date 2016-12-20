@@ -29,7 +29,7 @@ const events = ({ types, mapActionToKey }) => {
     }
   }
 
-    return (state = {}, action) => {
+    return (state = { events: { events:{} } }, action) => {
     switch (action.type) {
       case request:
       case success:
