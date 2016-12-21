@@ -21,7 +21,7 @@ Start App
 * click more details button for modal view 
 
 #Notes
-This app relies on the other app for data so make sure the API_ROOT in [This](https://github.com/AndreasHart/guideRedux/blob/master/src/middleware/api.js) matches your running Guide meteor app
+This app relies on the other app for data so make sure the API_ROOT in [This](https://github.com/AndreasHart/guideRedux/blob/master/src/middleware/api.js) matches the port your running the Guide meteor app from
 
 
 
