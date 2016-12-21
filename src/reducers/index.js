@@ -12,16 +12,11 @@ import * as ActionTypes from '../actions'
 
 //   return state
 // }
-const modal = (state = {show:false,id:null}, action)=>{
+const modal = (state = {show:false,id:null} , action)=>{
   switch(action.type){
     case 'TOGGLE_MODAL':
-    debugger;
-      return state.map(t => {
-        if(t.id !== action.id) {
-          return t
-          }
-        return {show: !t.show, id: action.id}
-      })
+      debugger;
+        return {show: !state.show, id: action.id}
       default:
       return state
   }

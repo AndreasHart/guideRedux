@@ -8,17 +8,16 @@ const getVisibleEvents = (events  , visibilityFilter) => {
     case 'SHOW_ALL':
       return events
     case 'UPDATE_FILTER':
-    debugger;
     if(events){
       return Object.keys(events).map(key=>{
          return events[key]
       }).filter(
         (ev) => {
-          debugger;
           return ev.text.activity.toLowerCase().indexOf(visibilityFilter.input.toLowerCase()) !== -1;
         }
       );
     }
+
     default:
       return events
   }

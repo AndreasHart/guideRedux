@@ -12,7 +12,7 @@ const EventList = ({ events, onEventClick }) => (
       <Event
         key={e.id}
         event={e}
-        onSingleEvent={onEventClick}
+        onSingleEvent={()=>onEventClick(e.id)}
       />)
     }) :''
   }
