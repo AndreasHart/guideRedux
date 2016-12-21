@@ -18,7 +18,6 @@ const callApi = (endpoint, schema) => {
 
         const camelizedJson = camelizeKeys(json)
 
-        debugger;
         return Object.assign({},
           camelizedJson.events,
           {  }
@@ -51,7 +50,6 @@ export default store => next => action => {
  if (typeof callAPI === 'undefined') {
     return next(action)
   }
-  debugger
   let { endpoint } = callAPI
   const { types } = callAPI
 

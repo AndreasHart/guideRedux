@@ -23,7 +23,6 @@ export const fetchEvents = () => ({
 export const sortEvents = () => ({
   type:'FETCH_EVENTS',
   events:()=> {
-    debugger;
     fetchEvents();
   }
 

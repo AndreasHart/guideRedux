@@ -7,24 +7,19 @@ const ModalComponent = ({ event, show, close }) => {
     return(
     <Modal show={show} onHide={close}>
       <Modal.Header closeButton>
-        <Modal.Title>{( event &&  event.text && event.text.activity) ? event.text.activity : ''} </Modal.Title>
+        <Modal.Title>{( event && event.text && event.text.activity) ? event.text.activity : ''} </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Text in a modal</h4>
-        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+          <ul>Where: {(event && event.text && event.text.location) ? event.text.location : ''}</ul>
+          <ul>
+            When: { ( event && event.text && event.text.date.toString()) ? ( event.text.date.toString() ) : ''}
+             @ { (event && event.text && event.text.startTime.toString()) ? ( event.text.startTime.toString() ) : '' }
+           </ul>
+          <ul>Address: {(event && event.text && event.text.address) ? event.text.address : ''}</ul>
+          <ul>Participants </ul>
+          <ul>Min: {(event && event.text && event.text.min) ? event.text.min : '0'} - Max: {(event && event.text && event.text.max) ? event.text.max : ''} </ul>
+          <ul>Price: ${(event && event.text && event.text.price) ? event.text.price : ''} </ul>
 
-        <hr />
-
-        <h4>Overflowing text to show scroll behavior</h4>
-        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={close} active >Close</Button>
