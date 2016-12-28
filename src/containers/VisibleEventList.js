@@ -23,10 +23,6 @@ const getVisibleEvents = (events  , visibilityFilter) => {
   }
 }
 
-// Object.keys(events.events.events).map(key => {
-//       let e = events.events.events[key];
-//       return(
-
 const mapStateToProps = (state) => ({
     // events : state.eventss.getEvents.events.events
    // events: getVisibleEvents(state.events, state.visibilityFilter)

@@ -16,7 +16,11 @@ const modal = (state = {show:false,id:null} , action)=>{
   switch(action.type){
     case 'TOGGLE_MODAL':
       debugger;
+        if( typeof(action.id) === 'string' ){
         return {show: !state.show, id: action.id}
+      }else{
+        return {show: !state.show, id: ''}
+      }
       default:
       return state
   }

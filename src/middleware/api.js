@@ -3,7 +3,7 @@ import { camelizeKeys } from 'humps'
 
 
 
-const API_ROOT = 'http://localhost:3002'
+const API_ROOT = 'http://localhost:3004'
 
 // Fetches an API response and normalizes the result JSON according to schema.
 // This makes every API response have the same shape, regardless of how nested it was.

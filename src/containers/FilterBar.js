@@ -1,22 +1,21 @@
 import { connect } from 'react-redux'
 import { updateFilter } from '../actions'
-import Filter from '../components/Filter'
+import FilterBarComponent from '../components/FilterBar'
 
-const mapStateToProps = (state, ownProps) => ({
-  input: ownProps.filter === state.visibilityFilter
+const mapStateToProps = (state) => ({
+  input: state.visibilityFilter.input
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  onClick: () => {
-    dispatch(setVisibilityFilter(ownProps.filter))
-  }
-  onChange: (e) => {
-        dispatch(updateFilter(e))
+  change: (e) => {
+        debugger
+        dispatch(updateFilter(e.value))
+      }
 })
 
-const FilterLink = connect(
+const FilterBar = connect(
   mapStateToProps,
   mapDispatchToProps
-)()
+)(FilterBarComponent)
 
-export default FilterLink
+export default FilterBar
