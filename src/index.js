@@ -5,7 +5,6 @@ import { Provider } from 'react-redux'
 import DevTools from './containers/DevTools'
 import reducer from './reducers'
 import thunk from 'redux-thunk'
-import invariant from 'redux-immutable-state-invariant';
 import createLogger from 'redux-logger'
 import api from './middleware/api'
 import { browserHistory } from 'react-router'
@@ -16,10 +15,11 @@ import App from './components/App'
 const store = createStore(
     reducer,
     compose(
-      applyMiddleware(invariant(), thunk, api, createLogger()),
+      applyMiddleware(thunk, api, createLogger()),
       DevTools.instrument()
       )
   )
+// const history = syncHistoryWithStore(browserHistory, store)
 
 
   render(
