@@ -8,7 +8,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   change: (e) => {
-        debugger
         dispatch(updateFilter(e.value))
       }
 })

@@ -3,14 +3,12 @@ import { connect } from 'react-redux'
 import { fetchEvents, updateFilter } from '../actions'
 
 let AddEvent = ({ dispatch }) => {
-  let input
 
 
   return (
-    <div>
+    <div className='col-xs-8'>
       <form onSubmit={e => {
         e.preventDefault()
-        debugger;
         dispatch(fetchEvents());
       }} >
           <button type="submit">
@@ -25,4 +23,5 @@ let AddEvent = ({ dispatch }) => {
 AddEvent = connect()(AddEvent)
 
 export default AddEvent
+
 

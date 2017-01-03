@@ -7,10 +7,8 @@ import VisibleEventList from '../containers/VisibleEventList'
 
 const App = () => (
   <div className='col-xs-12'>
-    <div className='row' >
-      <AddEvent  />
-      <FilterBar />
-    </div>
+    <AddEvent/>
+    <FilterBar />
     <VisibleEventList />
     <Modal />
     <DevTools/>

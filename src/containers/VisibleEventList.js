@@ -15,7 +15,7 @@ const getVisibleEvents = (events  , visibilityFilter) => {
         (ev) => {
           return ev.text.activity.toLowerCase().indexOf(visibilityFilter.input.toLowerCase()) !== -1;
         }
-      );
+      )
     }
 
     default:
@@ -26,12 +26,11 @@ const getVisibleEvents = (events  , visibilityFilter) => {
 const mapStateToProps = (state) => ({
     // events : state.eventss.getEvents.events.events
    // events: getVisibleEvents(state.events, state.visibilityFilter)
-   events: getVisibleEvents(state.eventss.getEvents.events.events , state.visibilityFilter)
+   events: getVisibleEvents(state.eventss.getEvents.events.events , state.visibilityFilter).sort((a,b)=>{
+              return new Date(b.text.date) - new Date(a.text.date);
+            })
 })
 
-// const mapDispatchToProps = ({
-//   onEventClick: toggleModal
-//   })
 const mapDispatchToProps = (dispatch) => {
   return {
     onEventClick: (id) => {

@@ -23,16 +23,14 @@ const getEvent = ( events, id ) => {
 
 const mapStateToProps = (state) => ({
    show: state.modal.show,
-   event: getEvent(state.eventss.getEvents.events.events, state.modal.id)[0]
+   event: state.modal.ev
 })
 
-// const mapDispatchToProps = ({
-//   onEventClick: toggleModal
-//   })
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    close:(id) => {
-      dispatch(toggleModal(id))
+    close:(ev) => {
+      dispatch(toggleModal(ev))
     }
   }
 }

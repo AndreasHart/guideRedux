@@ -12,15 +12,11 @@ import * as ActionTypes from '../actions'
 
 //   return state
 // }
-const modal = (state = {show:false,id:null} , action)=>{
+const modal = (state = { show:false , ev: null } , action)=>{
   switch(action.type){
     case 'TOGGLE_MODAL':
       debugger;
-        if( typeof(action.id) === 'string' ){
-        return {show: !state.show, id: action.id}
-      }else{
-        return {show: !state.show, id: ''}
-      }
+        return {show: !state.show, ev: action.ev}
       default:
       return state
   }

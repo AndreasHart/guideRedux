@@ -5,19 +5,17 @@ import { Button } from 'react-bootstrap'
 const FilterBar = ({ input, change }) => (
 
     <div className="col-sm-4">
-      <form onChange={()=>change(input)}>
         <label>Filter</label>
-        <input ref={node => {
+        <input onChange={()=>change(input)} ref={node => {
           input = node
-        }} />
-      </form>
+        }} value={input} />
       </div>
 
 )
 
 
 FilterBar.propTypes = {
-  input: PropTypes.string.isRequired,
+  input: PropTypes.string,
   change: PropTypes.func.isRequired
 }
 

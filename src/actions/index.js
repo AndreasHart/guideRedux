@@ -33,9 +33,9 @@ export const setVisibilityFilter = (filter) => ({
   filter
 })
 
-export const toggleModal = (id) => ({
+export const toggleModal = (ev) => ({
   type: 'TOGGLE_MODAL',
-  id
+  ev
 })
 
 export const updateFilter = (input) => ({
