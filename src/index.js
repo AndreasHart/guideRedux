@@ -7,10 +7,12 @@ import rootReducer from './reducers'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 import api from './middleware/api'
-import { browserHistory } from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
 import Root from './containers/Root'
 import App from './components/App'
+
+import { Router, Route, browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
+
 
 const logger = createLogger();
 const store = createStore(
@@ -20,16 +22,19 @@ const store = createStore(
       DevTools.instrument()
       )
   )
-// const history = syncHistoryWithStore(browserHistory, store)
+
+const history = syncHistoryWithStore(browserHistory, store)
 
 
   render(
   <Provider store={store}>
-    <App />
+    <Router history={history}>
+      <Route path="/" component={App}>
+      </Route>
+      </Router>
   </Provider>,
   document.getElementById('root')
 )
-
 
 
 
