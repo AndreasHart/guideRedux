@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import { Button } from 'react-bootstrap'
 
 
 const FilterBar = ({ input, change }) => (

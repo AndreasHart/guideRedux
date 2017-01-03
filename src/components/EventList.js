@@ -6,7 +6,7 @@ const EventList = ({ events, onEventClick }) => (
   <ul>
 
     {console.log('somehting',events)}
-    { events ? events.map(e => {
+    { (events.length > 0) ? events.map(e => {
 
       return(
       <Event

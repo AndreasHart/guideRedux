@@ -16,7 +16,7 @@ const modal = (state = { show:false , ev: null } , action)=>{
   switch(action.type){
     case 'TOGGLE_MODAL':
       debugger;
-        return {show: !state.show, ev: action.ev}
+        return {show: !state.show, ev: action.ev || {} }
       default:
       return state
   }

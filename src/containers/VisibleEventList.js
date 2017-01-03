@@ -16,19 +16,19 @@ const getVisibleEvents = (events  , visibilityFilter) => {
           return ev.text.activity.toLowerCase().indexOf(visibilityFilter.input.toLowerCase()) !== -1;
         }
       )
-    }
+    }else return {}
 
     default:
       return events
   }
 }
 
+
+
 const mapStateToProps = (state) => ({
     // events : state.eventss.getEvents.events.events
    // events: getVisibleEvents(state.events, state.visibilityFilter)
-   events: getVisibleEvents(state.eventss.getEvents.events.events , state.visibilityFilter).sort((a,b)=>{
-              return new Date(b.text.date) - new Date(a.text.date);
-            })
+   events: getVisibleEvents(state.eventss.getEvents.events.events , state.visibilityFilter)
 })
 
 const mapDispatchToProps = (dispatch) => {
@@ -45,3 +45,8 @@ const VisibleEventList = connect(
 )(EventList)
 
 export default VisibleEventList
+
+
+// .sort((a,b)=>{
+//               return new Date(b.text.date) - new Date(a.text.date);
+//             })

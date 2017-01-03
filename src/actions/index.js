@@ -20,13 +20,6 @@ export const fetchEvents = () => ({
   }
 })
 
-export const sortEvents = () => ({
-  type:'FETCH_EVENTS',
-  events:()=> {
-    fetchEvents();
-  }
-
-})
 
 export const setVisibilityFilter = (filter) => ({
   type: 'SET_VISIBILITY_FILTER',
