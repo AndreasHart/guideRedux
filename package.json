@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "humps": "^1.1.0",
-    "lodash": "^4.16.1",
+    "lodash": "^4.17.4",
     "normalizr": "^2.2.1",
     "react": "^15.3.2",
     "react-bootstrap": "^0.30.7",

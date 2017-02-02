@@ -2,7 +2,7 @@ import React, {  PropTypes } from 'react'
 import { Button , Modal } from 'react-bootstrap';
 
 const ModalComponent = ({ event, show, close }) => {
-  debugger;
+  //debugger;
 
     return(
     <Modal show={show} onHide={close}>

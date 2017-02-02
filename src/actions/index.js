@@ -1,7 +1,7 @@
-import { CALL_API, Schemas } from '../middleware/api'
+import { CALL_API } from '../middleware/api'
 
 
-let nextTodoId = 0
+
 export const addEvent = (info) => ({
   type: 'ADD_EVENT',
   id: info._id,

@@ -1,4 +1,3 @@
-import { Schema, arrayOf, normalize } from 'normalizr'
 import { camelizeKeys } from 'humps'
 
 
@@ -35,7 +34,7 @@ export const CALL_API = Symbol('Call API')
 // Performs the call and promises when such actions are dispatched.
 export default store => next => action => {
   // if(action.type === 'TOGGLE_MODAL' || action.type === 'UPDATE_FILTER' ){
-  //   debugger;
+  //   //debugger;
   //   next(actionWith({ type: action.type }))
   // }
   const callAPI = action[CALL_API]

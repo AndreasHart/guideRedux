@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchEvents, updateFilter } from '../actions'
+import { fetchEvents} from '../actions'
 
 let AddEvent = ({ dispatch }) => {
 
 
   return (
-    <div className='col-xs-8'>
+    <div className='addEvent'>
       <form onSubmit={e => {
         e.preventDefault()
         dispatch(fetchEvents());

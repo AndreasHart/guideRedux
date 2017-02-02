@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleModal,updateFilter } from '../actions'
+import { toggleModal } from '../actions'
 import EventList from '../components/EventList'
 
 

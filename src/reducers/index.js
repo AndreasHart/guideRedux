@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux'
 import events from './events'
-import merge from 'lodash/merge'
 import visibilityFilter from './visibilityFilter'
 import * as ActionTypes from '../actions'
 import { routerReducer } from 'react-router-redux'
@@ -9,7 +8,7 @@ import { routerReducer } from 'react-router-redux'
 const modal = (state = { show:false , ev: null } , action)=>{
   switch(action.type){
     case 'TOGGLE_MODAL':
-      debugger;
+      //debugger;
         return {show: !state.show, ev: action.ev }
       default:
       return state

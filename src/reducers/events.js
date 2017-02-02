@@ -1,12 +1,5 @@
-import union from 'lodash/union'
 
 const events = ({ types, mapActionToKey }) => {
-  // if (!types.every(t => typeof t === 'string')) {
-  //   throw new Error('Expected types to be strings.')
-  // }
-  // if (typeof mapActionToKey !== 'function') {
-  //   throw new Error('Expected mapActionToKey to be a function.')
-  // }
 
   const [ request, success, failure ] = types
   const event = (state = {}, action) => {
@@ -16,7 +9,7 @@ const events = ({ types, mapActionToKey }) => {
           state
         }
       case success:
-      debugger;
+      //debugger;
         return {
           events: action.response
         }
@@ -25,7 +18,7 @@ const events = ({ types, mapActionToKey }) => {
           state
         }
       default:
-        return state
+        return {...state , error : 'it broke'}
     }
   }
 
@@ -34,12 +27,8 @@ const events = ({ types, mapActionToKey }) => {
       case request:
       case success:
       case failure:
-        debugger;
+        //debugger;
 
-
-        // if (typeof key !== 'string') {
-        //   throw new Error('Expected key to be a string.')
-        // }
         return { ...state,
            events: event(state, action)
         }

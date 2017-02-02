@@ -6,35 +6,46 @@ import DevTools from './containers/DevTools'
 import rootReducer from './reducers'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
+import throttle from 'lodash/throttle';
+
 import api from './middleware/api'
-import Root from './containers/Root'
+import FilterBar from './containers/FilterBar'
 import App from './components/App'
 
-import { Router, Route, browserHistory } from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
+import { Router, Route, hashHistory } from 'react-router'
+import { loadState, saveState } from './localStorage'
 
-
+const persistedState = loadState();
 const logger = createLogger();
 const store = createStore(
     rootReducer,
+    persistedState,
     compose(
       applyMiddleware(thunk, api, logger ),
       DevTools.instrument()
       )
-  )
+  );
 
-const history = syncHistoryWithStore(browserHistory, store)
+store.subscribe(throttle(() => {
+  saveState({
+    eventss: store.getState().eventss,
+    visibilityFilter: store.getState().visibilityFilter
+  });
+}, 1000));
 
 
   render(
   <Provider store={store}>
-    <Router history={history}>
-      <Route path="/" component={App}>
-      </Route>
-      </Router>
+  <div>
+    <Router history={hashHistory}>
+      <Route path="/" component={App} />
+      <Route path="/filter" component={FilterBar} />
+    </Router>
+    <DevTools/>
+  </div>
   </Provider>,
   document.getElementById('root')
-)
+);
 
 
 
